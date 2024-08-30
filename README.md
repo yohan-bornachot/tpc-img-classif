@@ -63,7 +63,7 @@ You can modify the `config.yml` file to fit your specific requirements.
 To train the model, use the following command:
 
 ```bash
-python src/train.py --cfg_path config.yml --data_dir ./data --output_dir ./output --n_epochs 50 --device cuda:0
+python src/train.py --cfg_path config.yml --data_dir <path/to/data> --output_dir <path/to/output_dir> --n_epochs <epoch_number> --device cuda:0
 ```
 
 - `--cfg_path`: Path to the configuration file.
@@ -79,7 +79,7 @@ During training, model checkpoints and TensorBoard logs will be saved in the spe
 To perform inference on a new dataset, run:
 
 ```bash
-python src/inference.py --model_path ./output/model_epoch_49.pth --data_dir ./data --output_dir ./output --device cuda:0
+python src/inference.py --model_path ./output/<model_dir>/models/model_epoch_<i>.pth --data_dir <path/to/data> --output_dir <path/to/output_dir> --device cuda:0
 ```
 
 - `--model_path`: Path to the trained model file.
