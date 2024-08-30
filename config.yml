@@ -1,0 +1,25 @@
+DATA:
+  SEED: 100
+  NB_WORKERS_TRAIN_LOADER: 4
+  NB_WORKERS_VALID_LOADER: 16
+
+MODEL:
+  MODEL_TYPE: "EfficientNet_B0" #  any model available in torchvision.models
+  WEIGHTS: 'IMAGENET1K_V1'
+  LOSS_TYPE: "SmoothedHTERLoss"  # "BCEWithLogitsLoss", "SmoothedHTERLoss", or "MixedLoss"
+  ALPHA: 0.6  # Weight for balancing FAR and FRR in SmoothedHTERLoss computation
+
+TRAINING:
+  BATCH_SIZE: 512
+  LEARNING_RATE_INIT: 0.0001
+  LEARNING_RATE_SCHEDULER_FACTOR: 0.99
+  WEIGHT_DECAY: 0.00001
+  SEED: 100
+  MAX_EPOCHS: 50
+  VALIDATION_SPLIT: 0.8
+  USE_AMP: True  # Automatic Mixed Precision
+  MAX_GRADIENT_VALUE: 1.
+  SAVE_ALL_MODELS: True
+  MODEL_SAVE_PERIOD: 1  # epochs
+  COMPUTE_VALIDATION_METRICS_PERIOD: 5  # epochs
+  USE_DETERMINISTIC_ALGORITHMS: False  # Ensure reproducibility by turning optim algo into their deterministic version
