@@ -94,5 +94,5 @@ The results will be saved in `label_test.txt` in the output directory.
 After training, the metrics such as loss, and Half-Total Error Rate (HTER) will be logged. You can visualize these metrics using TensorBoard:
 
 ```bash
-tensorboard --logdir=./output/summary
+tensorboard --logdir=<path/to/output_dir>
 ```
